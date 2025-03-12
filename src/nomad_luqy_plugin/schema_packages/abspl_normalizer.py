@@ -105,5 +105,4 @@ def parse_numeric_data(lines, data_start_idx, logger):
         rc_count=len(raw_counts),
         dc_count=len(dark_counts),
     )
-    print(wavelengths, lum_flux, raw_counts, dark_counts)
     return wavelengths, lum_flux, raw_counts, dark_counts
