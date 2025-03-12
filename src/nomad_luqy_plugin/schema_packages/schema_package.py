@@ -207,6 +207,7 @@ class AbsPLMeasurement(Measurement, PlotSection):
         a_eln=ELNAnnotation(
             component=ELNComponentEnum.FileEditQuantity, label='AbsPL data file'
         ),
+        a_browser=dict(adaptor='RawFileAdaptor'),
     )
 
     def normalize(self, archive, logger):  # noqa: PLR0912, PLR0915
