@@ -82,7 +82,7 @@ def parse_numeric_data(lines, data_start_idx, logger):
     dark_counts = []
 
     if data_start_idx is not None and data_start_idx < len(lines):
-        MIN_PARTS_COUNT = 4
+        MIN_PARTS_COUNT = 3
         for line in lines[data_start_idx:]:
             if not line.strip():
                 continue
@@ -93,7 +93,8 @@ def parse_numeric_data(lines, data_start_idx, logger):
                 wavelengths.append(float(parts[0]))
                 lum_flux.append(float(parts[1]))
                 raw_counts.append(float(parts[2]))
-                dark_counts.append(float(parts[3]))
+                if len(parts) > MIN_PARTS_COUNT:
+                    dark_counts.append(float(parts[3]))
             except ValueError:
                 logger.debug('Could not parse numeric row', row=line)
 
@@ -104,5 +105,5 @@ def parse_numeric_data(lines, data_start_idx, logger):
         rc_count=len(raw_counts),
         dc_count=len(dark_counts),
     )
-
+    print(wavelengths, lum_flux, raw_counts, dark_counts)
     return wavelengths, lum_flux, raw_counts, dark_counts
