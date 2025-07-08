@@ -51,7 +51,7 @@ app_entry_point = AppEntryPoint(
                     selected=True,
                     unit='eV',
                     format={'decimals': 3, 'mode': 'standard'},
-                    label='Bandgap (eV)',
+                    label='Bandgap',
                 ),
                 'quasi_fermi_level_splitting': Column(
                     quantity='data.results[0].quasi_fermi_level_splitting#nomad_luqy_plugin.schema_packages.schema_package.AbsPLMeasurementELN',  # noqa: E501
