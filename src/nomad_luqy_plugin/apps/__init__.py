@@ -131,6 +131,7 @@ app_entry_point = AppEntryPoint(
                     ),
                     title='Bandgap',
                     show_input=True,
+                    unit='eV',
                     nbins=30,
                 ),
                 MenuItemHistogram(
@@ -140,6 +141,7 @@ app_entry_point = AppEntryPoint(
                     title='QFLS',
                     show_input=True,
                     nbins=30,
+                    unit='eV',
                 ),
                 MenuItemHistogram(
                     x=Axis(
