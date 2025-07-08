@@ -176,7 +176,7 @@ app_entry_point = AppEntryPoint(
                         title='LuQY (%)',
                         scale='log',
                     ),
-                    color='data.results[0].quasi_fermi_level_splitting#nomad_luqy_plugin.schema_packages.schema_package.AbsPLMeasurementELN',  # noqa: E501s
+                    color='data.results[0].quasi_fermi_level_splitting#nomad_luqy_plugin.schema_packages.schema_package.AbsPLMeasurementELN',  # noqa: E501
                     size=1000,
                     unit='eV',
                 ),
