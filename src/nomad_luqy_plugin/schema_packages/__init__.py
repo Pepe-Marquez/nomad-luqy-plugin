@@ -1,12 +1,14 @@
 from nomad.config.models.plugins import SchemaPackageEntryPoint
-from pydantic import Field
+from pydantic import Field  # type: ignore
 
 
 class NewSchemaPackageEntryPoint(SchemaPackageEntryPoint):
     parameter: int = Field(0, description='Custom configuration parameter')
 
     def load(self):
-        from nomad_luqy_plugin.schema_packages.schema_package import m_package
+        from nomad_luqy_plugin.schema_packages.schema_package import (  # noqa: PLC0415
+            m_package,  # noqa: PLC0415
+        )
 
         return m_package
 

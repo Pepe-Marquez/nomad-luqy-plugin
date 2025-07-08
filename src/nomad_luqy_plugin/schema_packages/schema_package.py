@@ -24,7 +24,7 @@ from nomad.metainfo import (
     Section,
     SubSection,
 )
-from nomad_measurements.general import NOMADMeasurementsCategory
+from nomad_measurements.general import NOMADMeasurementsCategory  # type: ignore
 
 from .abspl_normalizer import parse_abspl_data
 
