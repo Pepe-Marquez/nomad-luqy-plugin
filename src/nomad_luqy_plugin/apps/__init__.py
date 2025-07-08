@@ -49,11 +49,16 @@ app_entry_point = AppEntryPoint(
                 'bandgap': Column(
                     quantity='data.results[0].bandgap#nomad_luqy_plugin.schema_packages.schema_package.AbsPLMeasurementELN',  # noqa: E501
                     selected=True,
+                    unit='eV',
+                    format={'decimals': 3, 'mode': 'standard'},
+                    label='Bandgap (eV)',
                 ),
                 'quasi_fermi_level_splitting': Column(
                     quantity='data.results[0].quasi_fermi_level_splitting#nomad_luqy_plugin.schema_packages.schema_package.AbsPLMeasurementELN',  # noqa: E501
                     selected=True,
                     label='QFLS',
+                    unit='eV',
+                    format={'decimals': 3, 'mode': 'standard'},
                 ),
                 'derived_jsc': Column(
                     quantity='data.results[0].derived_jsc#nomad_luqy_plugin.schema_packages.schema_package.AbsPLMeasurementELN',  # noqa: E501
@@ -161,14 +166,17 @@ app_entry_point = AppEntryPoint(
                         'xxl': Layout(h=6, minH=3, minW=3, w=6, x=0, y=0),
                     },
                     x=Axis(
-                        search_quantity='data.results[0].bandgap#nomad_luqy_plugin.schema_packages.schema_package.AbsPLMeasurementELN',  # noqa: E501
+                        search_quantity='data.results[0].bandgap#nomad_luqy_plugin.schema_packages.schema_package.AbsPLMeasurementELN',
+                        unit='eV',  # noqa: E501
                     ),
                     y=Axis(
                         search_quantity='data.results[0].luminescence_quantum_yield#nomad_luqy_plugin.schema_packages.schema_package.AbsPLMeasurementELN',  # noqa: E501
                         title='LuQY (%)',
+                        scale='log',
                     ),
                     color='data.results[0].quasi_fermi_level_splitting#nomad_luqy_plugin.schema_packages.schema_package.AbsPLMeasurementELN',  # noqa: E501s
                     size=1000,
+                    unit='eV',
                 ),
             ]
         ),
